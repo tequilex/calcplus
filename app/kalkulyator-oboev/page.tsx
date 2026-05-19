@@ -5,19 +5,19 @@ import { RelatedCalculators } from '@/components/RelatedCalculators'
 import { WallpaperCalculator } from '@/components/calculators/WallpaperCalculator'
 
 export const metadata: Metadata = {
-  title: 'Калькулятор обоев — точный расчёт онлайн | calcplus.ru',
+  title: 'Калькулятор обоев — точный расчёт онлайн | pluscalc.ru',
   description:
     'Рассчитайте количество рулонов обоев онлайн — с учётом раппорта, окон и дверей. Мгновенный расчёт, бесплатно.',
   openGraph: {
-    title: 'Калькулятор обоев — точный расчёт онлайн | calcplus.ru',
+    title: 'Калькулятор обоев — точный расчёт онлайн | pluscalc.ru',
     description:
       'Рассчитайте количество рулонов обоев онлайн — с учётом раппорта, окон и дверей.',
     locale: 'ru_RU',
     type: 'website',
-    siteName: 'calcplus.ru',
+    siteName: 'pluscalc.ru',
   },
   alternates: {
-    canonical: 'https://calcplus.ru/kalkulyator-oboev/',
+    canonical: 'https://pluscalc.ru/kalkulyator-oboev/',
   },
 }
 
@@ -71,19 +71,19 @@ const jsonLd = {
           '@type': 'ListItem',
           position: 1,
           name: 'Главная',
-          item: 'https://calcplus.ru/',
+          item: 'https://pluscalc.ru/',
         },
         {
           '@type': 'ListItem',
           position: 2,
           name: 'Калькуляторы',
-          item: 'https://calcplus.ru/kalkulyatory/',
+          item: 'https://pluscalc.ru/kalkulyatory/',
         },
         {
           '@type': 'ListItem',
           position: 3,
           name: 'Калькулятор обоев',
-          item: 'https://calcplus.ru/kalkulyator-oboev/',
+          item: 'https://pluscalc.ru/kalkulyator-oboev/',
         },
       ],
     },

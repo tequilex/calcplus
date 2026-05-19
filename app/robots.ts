@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://calcplus.ru/sitemap.xml',
+    sitemap: 'https://pluscalc.ru/sitemap.xml',
   }
 }

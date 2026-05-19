@@ -1,17 +1,17 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Контакты — точный расчёт онлайн | calcplus.ru',
-  description: 'Свяжитесь с нами по вопросам сайта calcplus.ru — онлайн-калькуляторы для ремонта.',
+  title: 'Контакты — точный расчёт онлайн | pluscalc.ru',
+  description: 'Свяжитесь с нами по вопросам сайта pluscalc.ru — онлайн-калькуляторы для ремонта.',
   openGraph: {
-    title: 'Контакты | calcplus.ru',
-    description: 'Свяжитесь с нами по вопросам сайта calcplus.ru.',
+    title: 'Контакты | pluscalc.ru',
+    description: 'Свяжитесь с нами по вопросам сайта pluscalc.ru.',
     locale: 'ru_RU',
     type: 'website',
-    siteName: 'calcplus.ru',
+    siteName: 'pluscalc.ru',
   },
   alternates: {
-    canonical: 'https://calcplus.ru/kontakty/',
+    canonical: 'https://pluscalc.ru/kontakty/',
   },
 }
 
@@ -27,8 +27,8 @@ export default function ContactsPage() {
       <div className="flex flex-col gap-2 text-[var(--foreground)]">
         <div className="flex items-center gap-3">
           <span className="text-[13px] text-[var(--muted-foreground)] w-20">Email</span>
-          <a href="mailto:hello@calcplus.ru" className="text-[var(--accent)]">
-            hello@calcplus.ru
+          <a href="mailto:hello@pluscalc.ru" className="text-[var(--accent)]">
+            hello@pluscalc.ru
           </a>
         </div>
       </div>

@@ -24,7 +24,6 @@ export function ThemeToggle() {
       ) : (
         <Moon size={16} strokeWidth={2} aria-hidden />
       )}
-      <span>{isDark ? 'Светлая' : 'Тёмная'}</span>
     </button>
   )
 }

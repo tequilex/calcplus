@@ -19,6 +19,12 @@
   --hover-surface: #FAF9F5;
 }
 
+/* Переключение логотипа по теме */
+[data-theme="light"] .logo-dark,
+[data-theme="dark"] .logo-light {
+  display: none;
+}
+
 /* Тёмная тема */
 [data-theme="dark"] {
   --background: #262624;

@@ -3,19 +3,19 @@ import { calculators } from '@/lib/calculators'
 import { CalculatorCard } from '@/components/CalculatorCard'
 
 export const metadata: Metadata = {
-  title: 'Онлайн-калькуляторы для ремонта квартиры | calcplus.ru',
+  title: 'Онлайн-калькуляторы для ремонта квартиры | pluscalc.ru',
   description:
     'Бесплатные онлайн-калькуляторы для ремонта: расчёт обоев, краски, плитки и ламината. Точный расчёт материалов за секунды.',
   openGraph: {
-    title: 'Онлайн-калькуляторы для ремонта квартиры | calcplus.ru',
+    title: 'Онлайн-калькуляторы для ремонта квартиры | pluscalc.ru',
     description:
       'Бесплатные онлайн-калькуляторы для ремонта: расчёт обоев, краски, плитки и ламината.',
     locale: 'ru_RU',
     type: 'website',
-    siteName: 'calcplus.ru',
+    siteName: 'pluscalc.ru',
   },
   alternates: {
-    canonical: 'https://calcplus.ru/',
+    canonical: 'https://pluscalc.ru/',
   },
 }
 

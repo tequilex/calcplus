@@ -1,18 +1,18 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'О сайте — точный расчёт онлайн | calcplus.ru',
+  title: 'О сайте — точный расчёт онлайн | pluscalc.ru',
   description:
-    'calcplus.ru — бесплатные онлайн-калькуляторы для расчёта материалов при квартирном ремонте. Узнайте о проекте.',
+    'pluscalc.ru — бесплатные онлайн-калькуляторы для расчёта материалов при квартирном ремонте. Узнайте о проекте.',
   openGraph: {
-    title: 'О сайте | calcplus.ru',
-    description: 'calcplus.ru — бесплатные онлайн-калькуляторы для квартирного ремонта.',
+    title: 'О сайте | pluscalc.ru',
+    description: 'pluscalc.ru — бесплатные онлайн-калькуляторы для квартирного ремонта.',
     locale: 'ru_RU',
     type: 'website',
-    siteName: 'calcplus.ru',
+    siteName: 'pluscalc.ru',
   },
   alternates: {
-    canonical: 'https://calcplus.ru/o-saite/',
+    canonical: 'https://pluscalc.ru/o-saite/',
   },
 }
 
@@ -23,7 +23,7 @@ export default function AboutPage() {
         О сайте
       </h1>
       <p className="text-[var(--muted-foreground)] leading-relaxed mb-8 max-w-[52ch]">
-        calcplus.ru — калькуляторы для квартирного ремонта.
+        pluscalc.ru — калькуляторы для квартирного ремонта.
       </p>
 
       <div className="flex flex-col gap-4 text-[var(--foreground)] leading-relaxed">

@@ -5,12 +5,12 @@ import { Footer } from '@/components/Footer'
 import './globals.css'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://calcplus.ru'),
-  title: 'Calcplus.ru — калькуляторы для ремонта квартиры',
+  metadataBase: new URL('https://pluscalc.ru'),
+  title: 'Pluscalc.ru — калькуляторы для ремонта квартиры',
   description:
     'Онлайн-калькуляторы для квартирного ремонта: обои, краска, плитка, ламинат. Точный расчёт материалов бесплатно.',
   openGraph: {
-    siteName: 'calcplus.ru',
+    siteName: 'pluscalc.ru',
     locale: 'ru_RU',
     type: 'website',
   },

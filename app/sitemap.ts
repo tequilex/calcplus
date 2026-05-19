@@ -4,7 +4,7 @@ import { calculators } from '@/lib/calculators'
 export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://calcplus.ru'
+  const baseUrl = 'https://pluscalc.ru'
 
   const calculatorUrls: MetadataRoute.Sitemap = calculators
     .filter((c) => c.status === 'active')
