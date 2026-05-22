@@ -26,17 +26,17 @@ export default function CalculatorsPage() {
   return (
     <div className="max-w-[768px] mx-auto px-4 md:px-6 py-12">
       <div className="mb-10">
-        <h1 className="text-[28px] md:text-[32px] font-medium text-[var(--foreground)] mb-3 tracking-tight">
+        <h1 className="text-[28px] md:text-[32px] font-medium text-foreground mb-3 tracking-tight">
           Все калькуляторы
         </h1>
-        <p className="text-[var(--muted-foreground)] leading-relaxed max-w-[52ch]">
+        <p className="text-muted-foreground leading-relaxed max-w-[52ch]">
           Расчёт материалов для любого этапа ремонта — быстро и точно.
         </p>
       </div>
 
       {active.length > 0 && (
         <div className="mb-8">
-          <h2 className="text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--muted-foreground)] mb-4">
+          <h2 className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground mb-4">
             Доступны сейчас
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
@@ -49,7 +49,7 @@ export default function CalculatorsPage() {
 
       {soon.length > 0 && (
         <div>
-          <h2 className="text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--muted-foreground)] mb-4">
+          <h2 className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground mb-4">
             Скоро
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">

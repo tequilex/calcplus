@@ -10,7 +10,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
         <select
           ref={ref}
           className={cn(
-            'flex h-10 w-full appearance-none rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--background)] pl-3 pr-9 text-[15px] text-[var(--foreground)] transition-colors duration-[120ms] focus:outline-2 focus:outline-[var(--ring)] focus:outline-offset-0 focus:border-[var(--primary)] hover:border-[var(--muted-foreground)] disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer',
+            'flex h-10 w-full appearance-none rounded-md border border-border bg-background pl-3 pr-9 text-[15px] text-foreground transition-colors duration-120 focus:outline-2 focus:outline-ring focus:outline-offset-0 focus:border-primary hover:border-muted-foreground disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer',
             className,
           )}
           {...props}
@@ -23,7 +23,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
           strokeWidth={2}
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 stroke-[var(--muted-foreground)] pointer-events-none"
+          className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 stroke-muted-foreground pointer-events-none"
           aria-hidden
         >
           <path d="m6 9 6 6 6-6" />

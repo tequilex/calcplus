@@ -93,11 +93,11 @@ export function WallpaperCalculator() {
     <section className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-4 md:gap-6 mb-16 items-start">
 
       {/* Форма */}
-      <div className="flex flex-col gap-5 p-6 rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--background)]">
+      <div className="flex flex-col gap-5 p-6 rounded-lg border border-border bg-background">
 
         {/* Размеры комнаты */}
         <div className="flex flex-col gap-3">
-          <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--muted-foreground)]">
+          <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground">
             Размеры комнаты
           </div>
           <div className="grid grid-cols-3 gap-3 max-[420px]:grid-cols-2">
@@ -141,8 +141,8 @@ export function WallpaperCalculator() {
         </div>
 
         {/* Проёмы */}
-        <div className="flex flex-col gap-3 pt-5 border-t border-[var(--border)]">
-          <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--muted-foreground)]">
+        <div className="flex flex-col gap-3 pt-5 border-t border-border">
+          <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground">
             Проёмы
           </div>
           <div className="grid grid-cols-2 gap-3">
@@ -176,8 +176,8 @@ export function WallpaperCalculator() {
         </div>
 
         {/* Параметры рулона */}
-        <div className="flex flex-col gap-3 pt-5 border-t border-[var(--border)]">
-          <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--muted-foreground)]">
+        <div className="flex flex-col gap-3 pt-5 border-t border-border">
+          <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-muted-foreground">
             Параметры рулона
           </div>
           <div className="grid grid-cols-2 gap-3">
@@ -225,28 +225,28 @@ export function WallpaperCalculator() {
       <div className="flex flex-col gap-3 md:sticky md:top-16">
 
         {/* Главная цифра */}
-        <div className="p-6 rounded-[var(--radius-lg)] bg-[var(--primary-muted)]">
-          <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--primary-muted-foreground)] opacity-85 mb-2">
+        <div className="p-6 rounded-lg bg-primary-muted">
+          <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-primary-muted-foreground opacity-85 mb-2">
             Нужно купить
           </div>
           <div className="flex items-baseline gap-2 mb-1.5">
-            <strong className="text-[40px] font-medium leading-none tracking-tight text-[var(--primary-muted-foreground)]">
+            <strong className="text-[40px] font-medium leading-none tracking-tight text-primary-muted-foreground">
               {fmtTotal}
             </strong>
             {fmtTotal !== dash && (
-              <span className="text-[16px] text-[var(--primary-muted-foreground)]">
+              <span className="text-[16px] text-primary-muted-foreground">
                 {rollsWord}
               </span>
             )}
           </div>
-          <div className="text-[12px] text-[var(--primary-muted-foreground)] opacity-80 leading-snug">
+          <div className="text-[12px] text-primary-muted-foreground opacity-80 leading-snug">
             с запасом 1 рулон на брак
           </div>
         </div>
 
         {/* Разбивка */}
-        <div className="p-5 rounded-[var(--radius-lg)] bg-[var(--muted)]">
-          <div className="text-[12px] font-medium text-[var(--muted-foreground)] mb-2.5">
+        <div className="p-5 rounded-lg bg-muted">
+          <div className="text-[12px] font-medium text-muted-foreground mb-2.5">
             Расчёт
           </div>
           <ul className="space-y-0 m-0 p-0 list-none">
@@ -281,12 +281,12 @@ interface StepperProps {
 
 function Stepper({ id, value, onDecrement, onIncrement, onChange }: StepperProps) {
   return (
-    <div className="grid grid-cols-[40px_1fr_40px] h-10 border border-[var(--border)] rounded-[var(--radius-md)] bg-[var(--background)] overflow-hidden focus-within:border-[var(--primary)] focus-within:outline-2 focus-within:outline-[var(--ring)] focus-within:outline-offset-0 transition-colors duration-[120ms]">
+    <div className="grid grid-cols-[40px_1fr_40px] h-10 border border-border rounded-md bg-background overflow-hidden focus-within:border-primary focus-within:outline-2 focus-within:outline-ring focus-within:outline-offset-0 transition-colors duration-120">
       <button
         type="button"
         aria-label="Уменьшить"
         onClick={onDecrement}
-        className="flex items-center justify-center h-full w-full bg-transparent border-none text-[var(--foreground)] cursor-pointer hover:bg-[var(--muted)] transition-colors duration-[120ms]"
+        className="flex items-center justify-center h-full w-full bg-transparent border-none text-foreground cursor-pointer hover:bg-muted transition-colors duration-120"
       >
         <svg viewBox="0 0 24 24" fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 stroke-current" aria-hidden>
           <path d="M5 12h14" />
@@ -303,13 +303,13 @@ function Stepper({ id, value, onDecrement, onIncrement, onChange }: StepperProps
           const n = parseInt(e.target.value, 10)
           if (isFinite(n) && n >= 0) onChange(n)
         }}
-        className="w-full min-w-0 bg-transparent border-l border-r border-[var(--border)] text-[var(--foreground)] text-[15px] text-center p-0 focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+        className="w-full min-w-0 bg-transparent border-l border-r border-border text-foreground text-[15px] text-center p-0 focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
       />
       <button
         type="button"
         aria-label="Увеличить"
         onClick={onIncrement}
-        className="flex items-center justify-center h-full w-full bg-transparent border-none text-[var(--foreground)] cursor-pointer hover:bg-[var(--muted)] transition-colors duration-[120ms]"
+        className="flex items-center justify-center h-full w-full bg-transparent border-none text-foreground cursor-pointer hover:bg-muted transition-colors duration-120"
       >
         <svg viewBox="0 0 24 24" fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 stroke-current" aria-hidden>
           <path d="M5 12h14" />
@@ -330,12 +330,12 @@ function BreakdownRow({ label, value, divider }: BreakdownRowProps) {
   return (
     <li
       className={[
-        'flex justify-between items-baseline gap-4 text-[13px] leading-[1.8] text-[var(--muted-foreground)]',
-        divider ? 'border-t border-[var(--border)] pt-2 mt-1.5' : '',
+        'flex justify-between items-baseline gap-4 text-[13px] leading-[1.8] text-muted-foreground',
+        divider ? 'border-t border-border pt-2 mt-1.5' : '',
       ].join(' ')}
     >
       <span>{label}</span>
-      <span className="text-[var(--foreground)] tabular-nums">{value}</span>
+      <span className="text-foreground tabular-nums">{value}</span>
     </li>
   )
 }
