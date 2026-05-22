@@ -14,7 +14,7 @@ export function CalculatorCard({ calculator }: CalculatorCardProps) {
       className={[
         'relative flex flex-col gap-3 p-5 rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--background)] transition-colors duration-[120ms]',
         isActive
-          ? 'cursor-pointer hover:bg-[var(--hover-surface)] hover:border-[var(--muted-foreground)]'
+          ? 'cursor-pointer hover:bg-accent hover:border-muted-foreground'
           : 'opacity-60 cursor-not-allowed',
       ].join(' ')}
     >

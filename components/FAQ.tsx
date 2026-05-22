@@ -13,7 +13,7 @@ export function FAQ({ items }: FAQProps) {
     <div className="border-t border-[var(--border)]">
       {items.map((item, i) => (
         <details key={i} open={item.defaultOpen} className="border-b border-[var(--border)] group">
-          <summary className="list-none flex items-center justify-between gap-4 py-[18px] text-[16px] font-medium text-[var(--foreground)] cursor-pointer select-none hover:text-[var(--accent)] transition-colors duration-[120ms] [&::-webkit-details-marker]:hidden">
+          <summary className="list-none flex items-center justify-between gap-4 py-[18px] text-[16px] font-medium text-[var(--foreground)] cursor-pointer select-none hover:text-[var(--primary)] transition-colors duration-[120ms] [&::-webkit-details-marker]:hidden">
             {item.question}
             <svg
               viewBox="0 0 24 24"

@@ -224,21 +224,21 @@ export function WallpaperCalculator() {
       <div className="flex flex-col gap-3 md:sticky md:top-16">
 
         {/* Главная цифра */}
-        <div className="p-6 rounded-[var(--radius-lg)] bg-[var(--accent-muted)]">
-          <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--accent-muted-foreground)] opacity-85 mb-2">
+        <div className="p-6 rounded-[var(--radius-lg)] bg-[var(--primary-muted)]">
+          <div className="text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--primary-muted-foreground)] opacity-85 mb-2">
             Нужно купить
           </div>
           <div className="flex items-baseline gap-2 mb-1.5">
-            <strong className="text-[40px] font-medium leading-none tracking-tight text-[var(--accent-muted-foreground)]">
+            <strong className="text-[40px] font-medium leading-none tracking-tight text-[var(--primary-muted-foreground)]">
               {fmtTotal}
             </strong>
             {fmtTotal !== dash && (
-              <span className="text-[16px] text-[var(--accent-muted-foreground)]">
+              <span className="text-[16px] text-[var(--primary-muted-foreground)]">
                 {rollsWord}
               </span>
             )}
           </div>
-          <div className="text-[12px] text-[var(--accent-muted-foreground)] opacity-80 leading-snug">
+          <div className="text-[12px] text-[var(--primary-muted-foreground)] opacity-80 leading-snug">
             с запасом 1 рулон на брак
           </div>
         </div>
@@ -259,7 +259,7 @@ export function WallpaperCalculator() {
         {/* CTA */}
         <button
           type="button"
-          className="flex items-center justify-center gap-2 w-full h-11 px-4 rounded-[var(--radius-md)] bg-[var(--accent)] text-[var(--accent-foreground)] text-[15px] font-medium cursor-pointer hover:bg-[var(--accent-hover)] transition-colors duration-[120ms] focus-visible:outline-2 focus-visible:outline-[var(--focus-ring)] focus-visible:outline-offset-2"
+          className="flex items-center justify-center gap-2 w-full h-11 px-4 rounded-[var(--radius-md)] bg-[var(--primary)] text-[var(--primary-foreground)] text-[15px] font-medium cursor-pointer hover:bg-[var(--primary-hover)] transition-colors duration-[120ms] focus-visible:outline-2 focus-visible:outline-[var(--ring)] focus-visible:outline-offset-2"
         >
           <ShoppingCart size={16} strokeWidth={2} aria-hidden />
           Где купить выгодно
@@ -283,7 +283,7 @@ interface StepperProps {
 
 function Stepper({ id, value, onDecrement, onIncrement, onChange }: StepperProps) {
   return (
-    <div className="grid grid-cols-[40px_1fr_40px] h-10 border border-[var(--border)] rounded-[var(--radius-md)] bg-[var(--background)] overflow-hidden focus-within:border-[var(--accent)] focus-within:outline-2 focus-within:outline-[var(--focus-ring)] focus-within:outline-offset-0 transition-colors duration-[120ms]">
+    <div className="grid grid-cols-[40px_1fr_40px] h-10 border border-[var(--border)] rounded-[var(--radius-md)] bg-[var(--background)] overflow-hidden focus-within:border-[var(--primary)] focus-within:outline-2 focus-within:outline-[var(--ring)] focus-within:outline-offset-0 transition-colors duration-[120ms]">
       <button
         type="button"
         aria-label="Уменьшить"

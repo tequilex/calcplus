@@ -27,7 +27,7 @@ export default function ContactsPage() {
       <div className="flex flex-col gap-2 text-[var(--foreground)]">
         <div className="flex items-center gap-3">
           <span className="text-[13px] text-[var(--muted-foreground)] w-20">Email</span>
-          <a href="mailto:hello@pluscalc.ru" className="text-[var(--accent)]">
+          <a href="mailto:hello@pluscalc.ru" className="text-[var(--primary)]">
             hello@pluscalc.ru
           </a>
         </div>

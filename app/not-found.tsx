@@ -19,7 +19,7 @@ export default function NotFound() {
       </p>
       <Link
         href="/"
-        className="inline-flex items-center justify-center h-10 px-5 rounded-[var(--radius-md)] bg-[var(--accent)] text-[var(--accent-foreground)] text-[15px] font-medium hover:bg-[var(--accent-hover)] hover:no-underline transition-colors duration-[120ms]"
+        className="inline-flex items-center justify-center h-10 px-5 rounded-[var(--radius-md)] bg-[var(--primary)] text-[var(--primary-foreground)] text-[15px] font-medium hover:bg-[var(--primary-hover)] hover:no-underline transition-colors duration-[120ms]"
       >
         На главную
       </Link>

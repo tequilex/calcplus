@@ -111,7 +111,7 @@ export default function AboutPage() {
           <p>
             Нашли ошибку в расчёте, заметили баг, хотите предложить новый калькулятор или просто
             сказать спасибо — пишите на{' '}
-            <a href="mailto:hello@pluscalc.ru" className="text-[var(--accent)]">
+            <a href="mailto:hello@pluscalc.ru" className="text-[var(--primary)]">
               hello@pluscalc.ru
             </a>
             . Письма читаем лично, отвечаем обычно в течение пары дней.
