@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { Button } from '@/components/ui/button'
 
 export const metadata: Metadata = {
   title: 'Страница не найдена',
@@ -17,12 +18,9 @@ export default function NotFound() {
       <p className="text-[var(--muted-foreground)] mb-8 max-w-[40ch] mx-auto leading-relaxed">
         Возможно, страница была удалена или адрес введён с ошибкой.
       </p>
-      <Link
-        href="/"
-        className="inline-flex items-center justify-center h-10 px-5 rounded-[var(--radius-md)] bg-[var(--primary)] text-[var(--primary-foreground)] text-[15px] font-medium hover:bg-[var(--primary-hover)] hover:no-underline transition-colors duration-[120ms]"
-      >
-        На главную
-      </Link>
+      <Button asChild className="hover:bg-primary-hover hover:no-underline">
+        <Link href="/">На главную</Link>
+      </Button>
     </div>
   )
 }

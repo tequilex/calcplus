@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { AppWindow, DoorOpen, ShoppingCart, ArrowUpRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Select } from '@/components/ui/select'
@@ -257,14 +258,11 @@ export function WallpaperCalculator() {
         </div>
 
         {/* CTA */}
-        <button
-          type="button"
-          className="flex items-center justify-center gap-2 w-full h-11 px-4 rounded-[var(--radius-md)] bg-[var(--primary)] text-[var(--primary-foreground)] text-[15px] font-medium cursor-pointer hover:bg-[var(--primary-hover)] transition-colors duration-[120ms] focus-visible:outline-2 focus-visible:outline-[var(--ring)] focus-visible:outline-offset-2"
-        >
-          <ShoppingCart size={16} strokeWidth={2} aria-hidden />
+        <Button type="button" size="lg" className="w-full hover:bg-primary-hover">
+          <ShoppingCart aria-hidden />
           Где купить выгодно
-          <ArrowUpRight size={14} strokeWidth={2} className="ml-1" aria-hidden />
-        </button>
+          <ArrowUpRight className="ml-1 size-3.5" aria-hidden />
+        </Button>
 
       </div>
     </section>

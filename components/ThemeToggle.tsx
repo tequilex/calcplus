@@ -3,6 +3,7 @@
 import { useTheme } from 'next-themes'
 import { Moon, Sun } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { Button } from '@/components/ui/button'
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme()
@@ -13,17 +14,14 @@ export function ThemeToggle() {
   const isDark = mounted ? resolvedTheme === 'dark' : false
 
   return (
-    <button
+    <Button
       type="button"
+      variant="outline"
+      size="icon"
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
       aria-label="Переключить тему"
-      className="inline-flex items-center gap-2 px-3 py-2 text-sm rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--background)] text-[var(--foreground)] cursor-pointer hover:bg-[var(--muted)] transition-colors duration-[120ms] shrink-0"
     >
-      {isDark ? (
-        <Sun size={16} strokeWidth={2} aria-hidden />
-      ) : (
-        <Moon size={16} strokeWidth={2} aria-hidden />
-      )}
-    </button>
+      {isDark ? <Sun aria-hidden /> : <Moon aria-hidden />}
+    </Button>
   )
 }
