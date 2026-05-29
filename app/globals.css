@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is([data-theme="dark"] *));
+
 /* ==============================================
    Дизайн-токены — светлая тема (по умолчанию)
    ============================================== */
@@ -24,6 +26,16 @@
   --primary-hover: #C96A4C;
   --primary-muted: #FCEFE8;
   --primary-muted-foreground: #B85F42;
+
+  /* sidebar — мапим на основную палитру */
+  --sidebar: var(--muted);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
 }
 
 /* Переключение логотипа по теме */
@@ -53,6 +65,16 @@
   --primary-hover: #E18768;
   --primary-muted: #3D2F26;
   --primary-muted-foreground: #E6906B;
+
+  /* sidebar — мапим на основную палитру */
+  --sidebar: var(--muted);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
 }
 
 /* ==============================================
@@ -87,6 +109,14 @@
   --radius-sm: 6px;
   --radius-md: 8px;
   --radius-lg: 12px;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
 }
 
 /* ==============================================
@@ -137,3 +167,4 @@ body {
     text-decoration: underline;
   }
 }
+
