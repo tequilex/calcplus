@@ -137,3 +137,28 @@ body {
     text-decoration: underline;
   }
 }
+
+/* ==============================================
+   Декоративный фон с линиями (между хедером и футером)
+   ============================================== */
+.bg-lines {
+  position: relative;
+  isolation: isolate;
+}
+.bg-lines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-color: var(--foreground);
+  -webkit-mask-image: url(/lines.svg);
+  mask-image: url(/lines.svg);
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  -webkit-mask-size: 600px 600px;
+  mask-size: 600px 600px;
+  -webkit-mask-position: 0 100%;
+  mask-position: 0 100%;
+  opacity: 0.05;
+  z-index: -1;
+}

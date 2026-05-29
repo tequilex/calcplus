@@ -5,8 +5,18 @@ import { ThemeToggle } from './ThemeToggle'
 export function Header() {
   return (
     <header
-      className="sticky top-0 z-10 flex items-center justify-between gap-4 px-4 py-3 border-b border-border bg-background md:px-6"
+      className="sticky top-0 z-10 border-b border-primary-muted bg-background"
     >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: 'url(/stripe.svg)',
+          backgroundRepeat: 'repeat',
+          backgroundSize: '24px 24px',
+        }}
+      />
+      <div className="relative flex items-center justify-between gap-4 px-4 py-3 md:px-6">
       <div className="flex items-center gap-3 min-w-0">
         <Link href="/" className="flex items-center hover:no-underline" aria-label="pluscalc.ru — на главную">
           <Image
@@ -47,6 +57,7 @@ export function Header() {
       </nav>
 
       <ThemeToggle />
+      </div>
     </header>
   )
 }
