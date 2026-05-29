@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Select } from '@/components/ui/select'
+import { Stepper } from '@/components/ui/stepper'
 
 interface FormValues {
   length: string
@@ -85,10 +86,6 @@ export function WallpaperCalculator() {
     setValues((v) => ({ ...v, [field]: value }))
   }
 
-  function step(field: 'windows' | 'doors', delta: number) {
-    setValues((v) => ({ ...v, [field]: Math.max(0, v[field] + delta) }))
-  }
-
   return (
     <section className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr] gap-4 md:gap-6 mb-16 items-start">
 
@@ -154,9 +151,7 @@ export function WallpaperCalculator() {
               <Stepper
                 id="f-windows"
                 value={values.windows}
-                onDecrement={() => step('windows', -1)}
-                onIncrement={() => step('windows', 1)}
-                onChange={(n) => setValues((v) => ({ ...v, windows: n }))}
+                onValueChange={(n) => setValues((v) => ({ ...v, windows: n }))}
               />
             </div>
             <div className="flex flex-col gap-1.5">
@@ -167,9 +162,7 @@ export function WallpaperCalculator() {
               <Stepper
                 id="f-doors"
                 value={values.doors}
-                onDecrement={() => step('doors', -1)}
-                onIncrement={() => step('doors', 1)}
-                onChange={(n) => setValues((v) => ({ ...v, doors: n }))}
+                onValueChange={(n) => setValues((v) => ({ ...v, doors: n }))}
               />
             </div>
           </div>
@@ -270,55 +263,6 @@ export function WallpaperCalculator() {
 }
 
 /* ---- Вспомогательные компоненты ---- */
-
-interface StepperProps {
-  id: string
-  value: number
-  onDecrement: () => void
-  onIncrement: () => void
-  onChange: (n: number) => void
-}
-
-function Stepper({ id, value, onDecrement, onIncrement, onChange }: StepperProps) {
-  return (
-    <div className="grid grid-cols-[40px_1fr_40px] h-10 border border-border rounded-md bg-background overflow-hidden focus-within:border-primary focus-within:outline-2 focus-within:outline-ring focus-within:outline-offset-0 transition-colors duration-120">
-      <button
-        type="button"
-        aria-label="Уменьшить"
-        onClick={onDecrement}
-        className="flex items-center justify-center h-full w-full bg-transparent border-none text-foreground cursor-pointer hover:bg-muted transition-colors duration-120"
-      >
-        <svg viewBox="0 0 24 24" fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 stroke-current" aria-hidden>
-          <path d="M5 12h14" />
-        </svg>
-      </button>
-      <input
-        id={id}
-        type="number"
-        min="0"
-        step="1"
-        inputMode="numeric"
-        value={value}
-        onChange={(e) => {
-          const n = parseInt(e.target.value, 10)
-          if (isFinite(n) && n >= 0) onChange(n)
-        }}
-        className="w-full min-w-0 bg-transparent border-l border-r border-border text-foreground text-[15px] text-center p-0 focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-      />
-      <button
-        type="button"
-        aria-label="Увеличить"
-        onClick={onIncrement}
-        className="flex items-center justify-center h-full w-full bg-transparent border-none text-foreground cursor-pointer hover:bg-muted transition-colors duration-120"
-      >
-        <svg viewBox="0 0 24 24" fill="none" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 stroke-current" aria-hidden>
-          <path d="M5 12h14" />
-          <path d="M12 5v14" />
-        </svg>
-      </button>
-    </div>
-  )
-}
 
 interface BreakdownRowProps {
   label: string
