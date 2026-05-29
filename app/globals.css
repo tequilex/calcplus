@@ -133,8 +133,10 @@ body {
     color: var(--primary);
     text-decoration: none;
   }
-  a:hover {
-    text-decoration: underline;
+  @media (hover: hover) {
+    a:hover {
+      text-decoration: underline;
+    }
   }
 }
 
