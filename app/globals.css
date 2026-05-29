@@ -10,13 +10,20 @@
   --muted: #F5F4F0;
   --muted-foreground: #6B6B68;
   --border: #E5E5E3;
-  --accent: #D97757;
-  --accent-foreground: #FFFFFF;
-  --accent-hover: #C96A4C;
-  --accent-muted: #FCEFE8;
-  --accent-muted-foreground: #B85F42;
-  --focus-ring: rgba(217, 119, 87, 0.35);
-  --hover-surface: #FAF9F5;
+  --input: #E5E5E3;
+  --ring: rgba(217, 119, 87, 0.35);
+  --primary: #D97757;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F5F4F0;
+  --secondary-foreground: #1F1E1D;
+  --accent: #FAF9F5;
+  --accent-foreground: #1F1E1D;
+  --destructive: #DC2626;
+
+  /* project-расширения (нет в shadcn) */
+  --primary-hover: #C96A4C;
+  --primary-muted: #FCEFE8;
+  --primary-muted-foreground: #B85F42;
 }
 
 /* Переключение логотипа по теме */
@@ -32,13 +39,20 @@
   --muted: #1F1E1D;
   --muted-foreground: #B5B3AD;
   --border: #3D3D3A;
-  --accent: #D97757;
-  --accent-foreground: #1F1E1D;
-  --accent-hover: #E18768;
-  --accent-muted: #3D2F26;
-  --accent-muted-foreground: #E6906B;
-  --focus-ring: rgba(217, 119, 87, 0.45);
-  --hover-surface: #2F2E2C;
+  --input: #3D3D3A;
+  --ring: rgba(217, 119, 87, 0.45);
+  --primary: #D97757;
+  --primary-foreground: #1F1E1D;
+  --secondary: #1F1E1D;
+  --secondary-foreground: #FAF9F5;
+  --accent: #2F2E2C;
+  --accent-foreground: #FAF9F5;
+  --destructive: #EF4444;
+
+  /* project-расширения (нет в shadcn) */
+  --primary-hover: #E18768;
+  --primary-muted: #3D2F26;
+  --primary-muted-foreground: #E6906B;
 }
 
 /* ==============================================
@@ -50,12 +64,20 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-accent-hover: var(--accent-hover);
-  --color-accent-muted: var(--accent-muted);
-  --color-accent-muted-foreground: var(--accent-muted-foreground);
-  --color-hover-surface: var(--hover-surface);
+  --color-destructive: var(--destructive);
+
+  /* project-расширения */
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-muted: var(--primary-muted);
+  --color-primary-muted-foreground: var(--primary-muted-foreground);
 
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
@@ -90,26 +112,53 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
-p {
-  margin: 0;
+/* ==============================================
+   Декоративный фон с линиями (между хедером и футером)
+   ============================================== */
+.bg-lines {
+  position: relative;
+  isolation: isolate;
 }
-
-a {
-  color: var(--accent);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
+.bg-lines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-color: var(--foreground);
+  -webkit-mask-image: url(/lines.svg);
+  mask-image: url(/lines.svg);
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+  -webkit-mask-size: 600px 600px;
+  mask-size: 600px 600px;
+  -webkit-mask-position: 0 100%;
+  mask-position: 0 100%;
+  opacity: 0.05;
+  z-index: -1;
 }

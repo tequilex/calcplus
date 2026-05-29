@@ -51,7 +51,7 @@ export default function RootLayout({
         <ThemeProvider attribute="data-theme" defaultTheme="dark" disableTransitionOnChange>
           <div className="flex min-h-screen flex-col">
             <Header />
-            <main className="flex-1">{children}</main>
+            <main className="bg-lines flex-1">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>

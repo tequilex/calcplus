@@ -18,16 +18,16 @@ export const metadata: Metadata = {
 export default function ContactsPage() {
   return (
     <div className="max-w-[768px] mx-auto px-4 md:px-6 py-12">
-      <h1 className="text-[28px] md:text-[32px] font-medium text-[var(--foreground)] mb-3 tracking-tight">
+      <h1 className="text-[28px] md:text-[32px] font-medium text-foreground mb-3 tracking-tight">
         Контакты
       </h1>
-      <p className="text-[var(--muted-foreground)] leading-relaxed mb-8">
+      <p className="text-muted-foreground leading-relaxed mb-8">
         По вопросам сотрудничества и предложениям пишите на почту.
       </p>
-      <div className="flex flex-col gap-2 text-[var(--foreground)]">
+      <div className="flex flex-col gap-2 text-foreground">
         <div className="flex items-center gap-3">
-          <span className="text-[13px] text-[var(--muted-foreground)] w-20">Email</span>
-          <a href="mailto:hello@pluscalc.ru" className="text-[var(--accent)]">
+          <span className="text-[13px] text-muted-foreground w-20">Email</span>
+          <a href="mailto:hello@pluscalc.ru" className="text-primary">
             hello@pluscalc.ru
           </a>
         </div>

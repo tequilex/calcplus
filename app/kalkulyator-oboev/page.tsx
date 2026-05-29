@@ -127,10 +127,10 @@ export default function WallpaperPage() {
         />
 
         <div className="pt-2 pb-8">
-          <h1 className="text-[32px] md:text-[36px] font-medium text-[var(--foreground)] mb-3 tracking-tight">
+          <h1 className="text-[32px] md:text-[36px] font-medium text-foreground mb-3 tracking-tight">
             Калькулятор обоев онлайн
           </h1>
-          <p className="text-[var(--muted-foreground)] leading-relaxed max-w-[52ch]">
+          <p className="text-muted-foreground leading-relaxed max-w-[52ch]">
             Рассчитайте количество рулонов обоев на комнату любой площади — с учётом раппорта рисунка, окон и дверей. Бесплатно, без регистрации, результат мгновенно.
           </p>
         </div>
@@ -139,7 +139,7 @@ export default function WallpaperPage() {
 
         {/* Как пользоваться */}
         <section className="mb-12">
-          <h2 className="text-[22px] md:text-[24px] font-medium text-[var(--foreground)] mb-5 tracking-tight">
+          <h2 className="text-[22px] md:text-[24px] font-medium text-foreground mb-5 tracking-tight">
             Как пользоваться
           </h2>
           <ol className="list-none p-0 m-0 flex flex-col gap-4 counter-reset-[step]">
@@ -149,8 +149,8 @@ export default function WallpaperPage() {
               'Выберите ширину и длину рулона — данные есть на этикетке. Если обои с рисунком, укажите раппорт.',
               'Результат пересчитывается мгновенно. Запас 1 рулон уже учтён — на подрезку и возможный брак.',
             ].map((text, i) => (
-              <li key={i} className="flex gap-3 items-start text-[15px] leading-relaxed text-[var(--foreground)]">
-                <span className="inline-flex items-center justify-center w-6 h-6 shrink-0 mt-0.5 rounded-[6px] bg-[var(--muted)] text-[var(--foreground)] text-xs font-medium">
+              <li key={i} className="flex gap-3 items-start text-[15px] leading-relaxed text-foreground">
+                <span className="inline-flex items-center justify-center w-6 h-6 shrink-0 mt-0.5 rounded-[6px] bg-muted text-foreground text-xs font-medium">
                   {i + 1}
                 </span>
                 {text}
@@ -161,10 +161,10 @@ export default function WallpaperPage() {
 
         {/* SEO-текст */}
         <section className="mb-12">
-          <h2 className="text-[22px] md:text-[24px] font-medium text-[var(--foreground)] mb-5 tracking-tight">
+          <h2 className="text-[22px] md:text-[24px] font-medium text-foreground mb-5 tracking-tight">
             Как правильно рассчитать обои на комнату
           </h2>
-          <div className="flex flex-col gap-5 text-[var(--foreground)] leading-relaxed">
+          <div className="flex flex-col gap-5 text-foreground leading-relaxed">
             <p>
               «10 метров в рулоне» на этикетке — это длина полотна, а не площадь, которую он
               закроет. Этот момент сбивает с толку чаще всего. Чтобы правильно посчитать рулоны на
@@ -173,7 +173,7 @@ export default function WallpaperPage() {
               проверить, не выдал ли он странный результат.
             </p>
 
-            <h3 className="text-[18px] md:text-[19px] font-medium text-[var(--foreground)] mt-2 tracking-tight">
+            <h3 className="text-[18px] md:text-[19px] font-medium text-foreground mt-2 tracking-tight">
               Какие данные нужны для расчёта
             </h3>
             <p>
@@ -185,7 +185,7 @@ export default function WallpaperPage() {
               10 м, раппорт от 0 до 64 см.
             </p>
 
-            <h3 className="text-[18px] md:text-[19px] font-medium text-[var(--foreground)] mt-2 tracking-tight">
+            <h3 className="text-[18px] md:text-[19px] font-medium text-foreground mt-2 tracking-tight">
               Стандартные размеры рулонов обоев
             </h3>
             <p>
@@ -197,24 +197,24 @@ export default function WallpaperPage() {
             <div className="overflow-x-auto -mx-4 md:mx-0">
               <table className="w-full text-[14px] my-1 border-collapse">
                 <thead>
-                  <tr className="border-b border-[var(--border)]">
-                    <th className="text-left py-2.5 px-4 md:px-3 font-medium text-[var(--foreground)]">Ширина</th>
-                    <th className="text-left py-2.5 px-4 md:px-3 font-medium text-[var(--foreground)]">Длина</th>
-                    <th className="text-left py-2.5 px-4 md:px-3 font-medium text-[var(--foreground)]">Тип</th>
+                  <tr className="border-b border-border">
+                    <th className="text-left py-2.5 px-4 md:px-3 font-medium text-foreground">Ширина</th>
+                    <th className="text-left py-2.5 px-4 md:px-3 font-medium text-foreground">Длина</th>
+                    <th className="text-left py-2.5 px-4 md:px-3 font-medium text-foreground">Тип</th>
                   </tr>
                 </thead>
-                <tbody className="text-[var(--muted-foreground)]">
-                  <tr className="border-b border-[var(--border)]">
+                <tbody className="text-muted-foreground">
+                  <tr className="border-b border-border">
                     <td className="py-2.5 px-4 md:px-3">0,53 м</td>
                     <td className="py-2.5 px-4 md:px-3">10 м</td>
                     <td className="py-2.5 px-4 md:px-3">Стандартные бумажные и виниловые</td>
                   </tr>
-                  <tr className="border-b border-[var(--border)]">
+                  <tr className="border-b border-border">
                     <td className="py-2.5 px-4 md:px-3">0,53 м</td>
                     <td className="py-2.5 px-4 md:px-3">15 м</td>
                     <td className="py-2.5 px-4 md:px-3">Удлинённые бумажные</td>
                   </tr>
-                  <tr className="border-b border-[var(--border)]">
+                  <tr className="border-b border-border">
                     <td className="py-2.5 px-4 md:px-3">1,06 м</td>
                     <td className="py-2.5 px-4 md:px-3">10 м</td>
                     <td className="py-2.5 px-4 md:px-3">Метровые виниловые</td>
@@ -228,7 +228,7 @@ export default function WallpaperPage() {
               </table>
             </div>
 
-            <h3 className="text-[18px] md:text-[19px] font-medium text-[var(--foreground)] mt-2 tracking-tight">
+            <h3 className="text-[18px] md:text-[19px] font-medium text-foreground mt-2 tracking-tight">
               Как учитывать раппорт рисунка
             </h3>
             <p>
@@ -246,7 +246,7 @@ export default function WallpaperPage() {
               много.
             </p>
 
-            <h3 className="text-[18px] md:text-[19px] font-medium text-[var(--foreground)] mt-2 tracking-tight">
+            <h3 className="text-[18px] md:text-[19px] font-medium text-foreground mt-2 tracking-tight">
               Сколько обоев брать с запасом
             </h3>
             <p>
@@ -267,7 +267,7 @@ export default function WallpaperPage() {
 
         {/* FAQ */}
         <section className="mb-12">
-          <h2 className="text-[22px] md:text-[24px] font-medium text-[var(--foreground)] mb-5 tracking-tight">
+          <h2 className="text-[22px] md:text-[24px] font-medium text-foreground mb-5 tracking-tight">
             Частые вопросы
           </h2>
           <FAQ items={faqItems} />
@@ -275,7 +275,7 @@ export default function WallpaperPage() {
 
         {/* Похожие */}
         <section className="mb-12">
-          <h2 className="text-[22px] md:text-[24px] font-medium text-[var(--foreground)] mb-5 tracking-tight">
+          <h2 className="text-[22px] md:text-[24px] font-medium text-foreground mb-5 tracking-tight">
             Похожие калькуляторы
           </h2>
           <RelatedCalculators excludeSlug="kalkulyator-oboev" limit={3} />
