@@ -56,7 +56,7 @@ export const categories: Category[] = [
         title: 'Калькулятор краски',
         description: 'Сколько литров уйдёт на стены в один или два слоя.',
         icon: PaintBucket,
-        status: 'coming-soon',
+        status: 'active',
         type: 'calculator',
       },
       {
