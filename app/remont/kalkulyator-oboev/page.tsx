@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { FAQ } from '@/components/FAQ'
-import { RelatedCalculators } from '@/components/RelatedCalculators'
+import { RelatedTools } from '@/components/RelatedTools'
 import { WallpaperCalculator } from '@/components/calculators/WallpaperCalculator'
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'pluscalc.ru',
   },
   alternates: {
-    canonical: 'https://pluscalc.ru/kalkulyator-oboev/',
+    canonical: 'https://pluscalc.ru/remont/kalkulyator-oboev/',
   },
 }
 
@@ -96,14 +96,14 @@ const jsonLd = {
         {
           '@type': 'ListItem',
           position: 2,
-          name: 'Калькуляторы',
-          item: 'https://pluscalc.ru/kalkulyatory/',
+          name: 'Ремонт',
+          item: 'https://pluscalc.ru/remont/',
         },
         {
           '@type': 'ListItem',
           position: 3,
           name: 'Калькулятор обоев',
-          item: 'https://pluscalc.ru/kalkulyator-oboev/',
+          item: 'https://pluscalc.ru/remont/kalkulyator-oboev/',
         },
       ],
     },
@@ -121,7 +121,7 @@ export default function WallpaperPage() {
         <Breadcrumbs
           items={[
             { label: 'Главная', href: '/' },
-            { label: 'Калькуляторы', href: '/kalkulyatory/' },
+            { label: 'Ремонт', href: '/remont/' },
             { label: 'Калькулятор обоев' },
           ]}
         />
@@ -278,7 +278,7 @@ export default function WallpaperPage() {
           <h2 className="text-[22px] md:text-[24px] font-medium text-foreground mb-5 tracking-tight">
             Похожие калькуляторы
           </h2>
-          <RelatedCalculators excludeSlug="kalkulyator-oboev" limit={3} />
+          <RelatedTools categorySlug="remont" excludeSlug="kalkulyator-oboev" limit={3} />
         </section>
       </div>
     </>

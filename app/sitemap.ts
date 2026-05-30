@@ -1,15 +1,22 @@
 import type { MetadataRoute } from 'next'
-import { calculators } from '@/lib/calculators'
+import { categories, getAllTools } from '@/lib/tools'
 
 export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://pluscalc.ru'
 
-  const calculatorUrls: MetadataRoute.Sitemap = calculators
-    .filter((c) => c.status === 'active')
-    .map((c) => ({
-      url: `${baseUrl}/${c.slug}/`,
+  const categoryUrls: MetadataRoute.Sitemap = categories.map((cat) => ({
+    url: `${baseUrl}/${cat.slug}/`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }))
+
+  const toolUrls: MetadataRoute.Sitemap = getAllTools()
+    .filter((t) => t.status === 'active')
+    .map((t) => ({
+      url: `${baseUrl}/${t.categorySlug}/${t.slug}/`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
@@ -23,12 +30,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/kalkulyatory/`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
       url: `${baseUrl}/o-saite/`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
@@ -40,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
-    ...calculatorUrls,
+    ...categoryUrls,
+    ...toolUrls,
   ]
 }

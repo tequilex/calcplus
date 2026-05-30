@@ -37,24 +37,9 @@ export function Header() {
           />
         </Link>
         <span className="hidden sm:block text-sm text-muted-foreground whitespace-nowrap overflow-hidden text-ellipsis">
-          калькуляторы для ремонта
+          онлайн-инструменты
         </span>
       </div>
-
-      <nav className="hidden sm:flex gap-1" aria-label="Навигация">
-        <Link
-          href="/kalkulyatory/"
-          className="text-sm text-muted-foreground px-3 py-1 rounded-md hover:bg-muted hover:text-primary hover:no-underline transition-colors duration-120"
-        >
-          Калькуляторы
-        </Link>
-        <Link
-          href="/o-saite/"
-          className="text-sm text-muted-foreground px-3 py-1 rounded-md hover:bg-muted hover:text-primary hover:no-underline transition-colors duration-120"
-        >
-          О сайте
-        </Link>
-      </nav>
 
       <ThemeToggle />
       </div>

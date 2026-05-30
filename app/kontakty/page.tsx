@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Контакты — точный расчёт онлайн | pluscalc.ru',
-  description: 'Свяжитесь с нами по вопросам сайта pluscalc.ru — онлайн-калькуляторы для ремонта.',
+  title: 'Контакты | pluscalc.ru',
+  description: 'Свяжитесь с нами по вопросам сайта pluscalc.ru — бесплатные онлайн-инструменты для ежедневных задач.',
   openGraph: {
     title: 'Контакты | pluscalc.ru',
     description: 'Свяжитесь с нами по вопросам сайта pluscalc.ru.',

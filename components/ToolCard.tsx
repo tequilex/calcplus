@@ -1,13 +1,16 @@
 import Link from 'next/link'
-import type { Calculator } from '@/lib/calculators'
+import type { Tool } from '@/lib/tools'
+import { TOOL_TYPE_LABELS } from '@/lib/tools'
 
-interface CalculatorCardProps {
-  calculator: Calculator
+interface ToolCardProps {
+  tool: Tool
+  categorySlug: string
 }
 
-export function CalculatorCard({ calculator }: CalculatorCardProps) {
-  const { slug, title, description, icon: Icon, status } = calculator
+export function ToolCard({ tool, categorySlug }: ToolCardProps) {
+  const { slug, title, description, icon: Icon, status, type } = tool
   const isActive = status === 'active'
+  const showTypeBadge = type !== 'calculator'
 
   const card = (
     <div
@@ -23,9 +26,16 @@ export function CalculatorCard({ calculator }: CalculatorCardProps) {
           Скоро
         </span>
       )}
-      <span className="inline-flex items-center justify-center w-8 h-8 rounded-md bg-muted">
-        <Icon size={18} strokeWidth={2} className="text-foreground" aria-hidden />
-      </span>
+      <div className="flex items-center gap-2">
+        <span className="inline-flex items-center justify-center w-8 h-8 rounded-md bg-muted">
+          <Icon size={18} strokeWidth={2} className="text-foreground" aria-hidden />
+        </span>
+        {showTypeBadge && (
+          <span className="text-[11px] font-medium text-muted-foreground uppercase tracking-wide">
+            {TOOL_TYPE_LABELS[type]}
+          </span>
+        )}
+      </div>
       <div>
         <div className="text-[15px] font-medium text-foreground leading-snug mb-1">
           {title}
@@ -39,7 +49,7 @@ export function CalculatorCard({ calculator }: CalculatorCardProps) {
 
   if (isActive) {
     return (
-      <Link href={`/${slug}/`} className="hover:no-underline block">
+      <Link href={`/${categorySlug}/${slug}/`} className="hover:no-underline block">
         {card}
       </Link>
     )

@@ -9,9 +9,9 @@ const YANDEX_METRIKA_ID = 109350467
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://pluscalc.ru'),
-  title: 'Pluscalc.ru — калькуляторы для ремонта квартиры',
+  title: 'Pluscalc — все нужные расчёты в одном месте',
   description:
-    'Онлайн-калькуляторы для квартирного ремонта: обои, краска, плитка, ламинат. Точный расчёт материалов бесплатно.',
+    'Бесплатная платформа онлайн-инструментов для ежедневных задач: калькуляторы, конвертеры, генераторы. Без регистрации и без рекламы.',
   openGraph: {
     siteName: 'pluscalc.ru',
     locale: 'ru_RU',
