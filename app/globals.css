@@ -141,6 +141,34 @@ body {
 }
 
 /* ==============================================
+   Бегущая строка (sub-header на главной)
+   ============================================== */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee {
+  display: flex;
+  overflow: hidden;
+  color: var(--primary);
+  transition: color 120ms ease;
+}
+.marquee:hover {
+  color: var(--primary-hover);
+}
+.marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  white-space: nowrap;
+  animation: marquee 100s linear infinite;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  .marquee { overflow-x: auto; }
+}
+
+/* ==============================================
    Декоративный фон с линиями (между хедером и футером)
    ============================================== */
 .bg-lines {

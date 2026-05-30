@@ -1,4 +1,3 @@
-import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { ToolCard } from '@/components/ToolCard'
 import { findCategory } from '@/lib/tools'
 import { notFound } from 'next/navigation'
@@ -14,17 +13,33 @@ export function CategoryView({ slug, children }: CategoryViewProps) {
   if (!category) notFound()
   const Icon = category.icon
 
+  const breadcrumbsLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Главная',
+        item: 'https://pluscalc.ru/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: category.title,
+        item: `https://pluscalc.ru/${category.slug}/`,
+      },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsLd) }}
+      />
       <div className="max-w-[1024px] mx-auto px-4 md:px-6">
-        <Breadcrumbs
-          items={[
-            { label: 'Главная', href: '/' },
-            { label: category.title },
-          ]}
-        />
-
-        <div className="flex items-start gap-4 pt-2 pb-8">
+        <div className="flex items-start gap-4 pt-8 pb-8">
           <span className="inline-flex items-center justify-center w-11 h-11 rounded-md bg-muted shrink-0">
             <Icon size={22} strokeWidth={2} className="text-foreground" aria-hidden />
           </span>

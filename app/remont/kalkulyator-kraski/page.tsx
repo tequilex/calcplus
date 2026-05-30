@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { FAQ } from '@/components/FAQ'
 import { RelatedTools } from '@/components/RelatedTools'
 import { PaintCalculator } from '@/components/calculators/PaintCalculator'
@@ -123,15 +122,7 @@ export default function PaintPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="max-w-[768px] mx-auto px-4 md:px-6">
-        <Breadcrumbs
-          items={[
-            { label: 'Главная', href: '/' },
-            { label: 'Ремонт', href: '/remont/' },
-            { label: 'Калькулятор краски' },
-          ]}
-        />
-
-        <div className="pt-2 pb-8">
+        <div className="pt-8 pb-8">
           <h1 className="text-[32px] md:text-[36px] font-medium text-foreground mb-3 tracking-tight">
             Калькулятор краски онлайн
           </h1>

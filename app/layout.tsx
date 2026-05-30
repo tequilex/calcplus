@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { Header } from '@/components/Header'
+import { SubHeader } from '@/components/SubHeader'
 import { Footer } from '@/components/Footer'
 import './globals.css'
 
@@ -51,6 +52,7 @@ export default function RootLayout({
         <ThemeProvider attribute="data-theme" defaultTheme="dark" disableTransitionOnChange>
           <div className="flex min-h-screen flex-col">
             <Header />
+            <SubHeader />
             <main className="bg-lines flex-1">{children}</main>
             <Footer />
           </div>
