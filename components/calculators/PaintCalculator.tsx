@@ -205,11 +205,11 @@ export function PaintCalculator() {
                 value={values.consumption}
                 onChange={(e) => set('consumption', e.target.value)}
               >
-                <option value="0.10">0,10 — глянцевая</option>
-                <option value="0.13">0,13 — для потолка</option>
-                <option value="0.15">0,15 — для стен</option>
-                <option value="0.18">0,18 — фасадная</option>
-                <option value="0.20">0,20 — фактурная</option>
+                <option value="0.10">0,10 — алкидная, эмаль</option>
+                <option value="0.13">0,13 — водоэмульсионная</option>
+                <option value="0.15">0,15 — акриловая, латексная</option>
+                <option value="0.18">0,18 — фасадная, силиконовая</option>
+                <option value="0.20">0,20 — фактурная, декоративная</option>
               </Select>
             </div>
             <div className="flex flex-col gap-1.5">

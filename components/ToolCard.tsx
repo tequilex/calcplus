@@ -15,7 +15,7 @@ export function ToolCard({ tool, categorySlug }: ToolCardProps) {
   const card = (
     <div
       className={[
-        'relative flex flex-col gap-3 p-5 rounded-lg border border-border bg-background transition-colors duration-120',
+        'relative flex flex-col gap-3 p-5 h-full rounded-lg border border-border bg-background transition-colors duration-120',
         isActive
           ? 'cursor-pointer hover:bg-accent hover:border-muted-foreground'
           : 'opacity-60 cursor-not-allowed',
@@ -49,7 +49,7 @@ export function ToolCard({ tool, categorySlug }: ToolCardProps) {
 
   if (isActive) {
     return (
-      <Link href={`/${categorySlug}/${slug}/`} className="hover:no-underline block">
+      <Link href={`/${categorySlug}/${slug}/`} className="hover:no-underline block h-full">
         {card}
       </Link>
     )
