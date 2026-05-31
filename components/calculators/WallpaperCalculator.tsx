@@ -33,6 +33,10 @@ function parseNum(s: string): number {
   return isFinite(v) ? v : NaN
 }
 
+function formatNum(n: number, digits = 2): string {
+  return n.toFixed(digits).replace(/\.?0+$/, '').replace('.', ',')
+}
+
 export function WallpaperCalculator() {
   const [values, setValues] = useState<FormValues>({
     length: '4.5',
@@ -60,6 +64,7 @@ export function WallpaperCalculator() {
   let stripsPerRoll = NaN
   let rollsNoSpare = NaN
   let rollsTotal = NaN
+  let glueKg = NaN
 
   if (isValid) {
     perimeter = Math.max(0, 2 * (length + width) - values.windows * 1.5 - values.doors * 0.9)
@@ -68,6 +73,12 @@ export function WallpaperCalculator() {
     stripsPerRoll = Math.floor(rollLength / stripHeight)
     rollsNoSpare = stripsPerRoll > 0 ? Math.ceil(stripsNeeded / stripsPerRoll) : 0
     rollsTotal = rollsNoSpare > 0 ? rollsNoSpare + 1 : 0
+
+    const wallsArea = Math.max(
+      0,
+      2 * (length + width) * height - values.windows * 1.5 - values.doors * 1.6,
+    )
+    glueKg = Math.ceil((wallsArea * 25) / 1000 * 4) / 4
   }
 
   const dash = '—'
@@ -81,6 +92,7 @@ export function WallpaperCalculator() {
     : dash
   const fmtTotal = isValid && rollsTotal > 0 ? String(rollsTotal) : dash
   const rollsWord = isValid && rollsTotal > 0 ? pluralRolls(rollsTotal) : 'рулонов'
+  const fmtGlue = isValid && glueKg > 0 ? `${formatNum(glueKg)} кг` : dash
 
   function set(field: keyof FormValues, value: string) {
     setValues((v) => ({ ...v, [field]: value }))
@@ -246,7 +258,8 @@ export function WallpaperCalculator() {
             <BreakdownRow label="Периметр" value={fmtPerimeter} />
             <BreakdownRow label="Полос обоев" value={fmtStrips} />
             <BreakdownRow label="Полос с рулона" value={fmtStripsPerRoll} />
-            <BreakdownRow label="Без запаса" value={fmtNoSpare} divider />
+            <BreakdownRow label="Без запаса" value={fmtNoSpare} />
+            <BreakdownRow label="Обойный клей" value={fmtGlue} divider />
           </ul>
         </div>
 

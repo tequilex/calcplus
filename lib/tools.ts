@@ -62,9 +62,9 @@ export const categories: Category[] = [
       {
         slug: 'kalkulyator-plitki',
         title: 'Калькулятор плитки',
-        description: 'Количество плиток на стену или пол с запасом 10%.',
+        description: 'Количество плиток на пол или стены, расход клея и затирки.',
         icon: Grid3x3,
-        status: 'coming-soon',
+        status: 'active',
         type: 'calculator',
       },
       {
